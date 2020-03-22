@@ -7,12 +7,12 @@ require('rimraf')('./build', function(){
         if (err) {
             console.error(err);
         } else {
-            console.log('index.css: build and uglify');
-            var uglified = require('uglifycss').processFiles(
-                [ 'index.css' ],
-                { maxLineLen: 500, expandVars: true }
-            );
-            fs.writeFile('build/index.css', uglified);
+            // console.log('index.css: build and uglify');
+            // // var uglified = require('uglifycss').processFiles(
+            // //     [ 'index.css' ],
+            // //     { maxLineLen: 500, expandVars: true }
+            // // );
+            // // fs.writeFile('build/index.css', uglified);
 
             console.log('bundle.js: build and uglify');
             var b = require('browserify')();
@@ -25,5 +25,5 @@ require('rimraf')('./build', function(){
             require('file-copy')('index.html', 'build/index.html');
             console.log('All done!!!');
         }
-    });  
+    });
 });
